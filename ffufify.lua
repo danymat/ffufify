@@ -78,7 +78,7 @@ local url = getters.get_url(content)
 local headers = getters.get_headers(content)
 
 print("FFUFIFIED:\n")
-print("ffuf -u " .. url .. ' -X "' .. method .. '" \\')
-for _, header in pairs(headers) do
-    print("-H '" .. header[1] .. ":" .. header[2] .. "' \\")
+print("ffuf -u " .. url .. ' -X "' .. method .. (#headers ~= 0 and '" \\' or ""))
+for i, header in pairs(headers) do
+    print("-H '" .. header[1] .. ":" .. header[2] .. "'" .. (i ~= #headers and " \\" or ""))
 end
