@@ -48,3 +48,9 @@ ffuf -u portswigger.net/web-security/ -X "GET" \
 -H 'Accept-Language:fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7' \
 -H 'Connection:close'
 ```
+
+## Todo
+
+- [ ] Create a generic converter for multiple applications (ffuf, gobuster, wfuzz, etc)
+- [ ] Add more parameters
+- [ ] Support for post data
