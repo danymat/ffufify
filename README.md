@@ -32,8 +32,6 @@ Connection: close
 Becomes:
 
 ```
-FFUFIFIED:
-
 ffuf -u portswigger.net/web-security/ -X "GET" \
 -H 'Cookie:Authenticated_UserVerificationId=8CC88CF5...' \
 -H 'Sec-Ch-Ua:"Chromium";v="103", ".Not/A)Brand";v="99"' \
