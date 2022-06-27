@@ -34,11 +34,11 @@ Connection: close
 Becomes:
 
 ```
-$ lua ffufify.lua FILE /usr/share/
+$ lua ffufify.lua file /usr/share/wordlists/rockyou.txt
 
 FFUFIFIED:
 
-ffuf -u portswigger.net/web-security/ -X "GET" -w /usr/share/ \
+ffuf -u portswigger.net/web-security/ -X "GET" -w /usr/share/wordlists/rockyou.txt \
 -H 'Cookie:Authenticated_UserVerificationId=8CC88CF5...' \
 -H 'Sec-Ch-Ua:"Chromium";v="103", ".Not/A)Brand";v="99"' \
 -H 'Sec-Ch-Ua-Mobile:?0' \
