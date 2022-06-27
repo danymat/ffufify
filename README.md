@@ -2,11 +2,13 @@
 
 Converts a burp request to a ffuf command.
 
+## Installation
+
 ```
+git clone https://github.com/danymat/ffufify.git
+cd ffufify
 lua ffufify.lua <file> <wordlist>
 ```
-
-- `<file>` being the filename that contains the burp request
 
 ## Example
 
