@@ -3,7 +3,7 @@
 Converts a burp request to a ffuf command.
 
 ```
-lua ffufify.lua <file>
+lua ffufify.lua <file> <wordlist>
 ```
 
 - `<file>` being the filename that contains the burp request
@@ -32,7 +32,11 @@ Connection: close
 Becomes:
 
 ```
-ffuf -u portswigger.net/web-security/ -X "GET" \
+$ lua ffufify.lua FILE /usr/share/
+
+FFUFIFIED:
+
+ffuf -u portswigger.net/web-security/ -X "GET" -w /usr/share/ \
 -H 'Cookie:Authenticated_UserVerificationId=8CC88CF5...' \
 -H 'Sec-Ch-Ua:"Chromium";v="103", ".Not/A)Brand";v="99"' \
 -H 'Sec-Ch-Ua-Mobile:?0' \
@@ -53,4 +57,5 @@ ffuf -u portswigger.net/web-security/ -X "GET" \
 
 - [ ] Create a generic converter for multiple applications (ffuf, gobuster, wfuzz, etc)
 - [ ] Add more parameters
+  - [x] Support wordlist
 - [ ] Support for post data
